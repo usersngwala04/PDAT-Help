@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://usersngwala04.github.io/pdat-help/sitemap.xml
