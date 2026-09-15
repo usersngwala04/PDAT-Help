@@ -218,6 +218,15 @@ body{display:flex;flex-direction:column;}
   width:28px;height:36px;text-align:center;font-size:16px;border-radius:6px;
   border:1px solid var(--line);background:var(--bg-raised);color:var(--text);font-family:var(--mono);
 }
+/* BUGFIX: .modal-box input[type=text] (width:100%) has higher CSS
+   specificity than .code-boxes-row input, so without this, every one of
+   the 20 code-entry digit boxes got stretched full-width and stacked
+   vertically instead of sitting in a compact row. ID selectors beat
+   class+attribute combinations regardless of source order, so this
+   reliably wins. */
+#devCodeBoxes input{
+  width:28px;height:36px;padding:0;text-align:center;font-size:16px;
+}
 .access-denied-icon{
   width:44px;height:44px;border-radius:12px;background:var(--amber-soft);color:var(--amber);
   display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px;
